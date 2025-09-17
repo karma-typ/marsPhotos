@@ -1,23 +1,18 @@
 package com.example.marsphotos.ui.screens.repository
 
 import android.content.Context
-import androidx.compose.runtime.mutableStateMapOf
-import androidx.compose.ui.Modifier
 import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.marsphotos.MarsPhotoApplication
 import com.example.marsphotos.ui.screens.network.MarsPhoto
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.delay
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -49,7 +44,7 @@ class RoomModule(){
     @Singleton
     fun provideDataBase(@ApplicationContext context: Context): MarsDatabase{
          return Room.databaseBuilder(context, MarsDatabase::class.java, DATABASE_NAME)
-            //.allowMainThreadQueries()//???
+            //.allowMainThreadQueries()
             .build()
     }
 

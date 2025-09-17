@@ -16,32 +16,22 @@
 package com.example.marsphotos.ui.screens
 
 import android.app.Application
-import android.content.Context
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marsphotos.MarsPhotoApplication
 import com.example.marsphotos.ui.screens.network.MarsApi
 import com.example.marsphotos.ui.screens.network.MarsPhoto
 import com.example.marsphotos.ui.screens.repository.MarsDao
 import com.example.marsphotos.ui.screens.repository.MarsRepository
-import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import okhttp3.Dispatcher
 import retrofit2.HttpException
 import java.io.IOException
-import java.lang.Thread.sleep
 import javax.inject.Inject
-import kotlin.collections.getValue
-import kotlin.io.path.Path
-import kotlin.jvm.Throws
 
 sealed interface MarsUiState {
     data class Success(val numPhotosText: String) : MarsUiState
@@ -68,20 +58,18 @@ class MarsViewModel @Inject constructor(application: Application, dao: MarsDao) 
     }
 
     /**
-     * Gets Mars photos information from the Mars API Retrofit service and updates the
-     * [MarsPhoto] [List] [MutableList].
+     * Gets Mars photos information from the Mars API Retrofit service.
      */
     private fun getMarsPhotos() {
         viewModelScope.launch(Dispatchers.IO) {
             marsUiState = MarsUiState.Loading
             val repositoryLoadJob = launch {
-                //val c = this
                 delay(50)
                 marsRepository.init()
             }
             marsUiState = try {
-                val listResult = MarsApi.getPhotosTest()
-                //val listResult = MarsApi.retrofitService.getPhotos()
+                //val listResult = MarsApi.getPhotosTest()
+                val listResult = MarsApi.retrofitService.getPhotos()
 
                 /**
                  *  Test module to split result

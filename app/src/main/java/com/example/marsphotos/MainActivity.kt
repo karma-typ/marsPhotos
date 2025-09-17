@@ -23,10 +23,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.marsphotos.ui.MarsPhotosApp
-import com.example.marsphotos.ui.screens.network.MarsPhoto
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
 import dagger.hilt.android.AndroidEntryPoint
 

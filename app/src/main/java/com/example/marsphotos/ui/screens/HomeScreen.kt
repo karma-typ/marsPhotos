@@ -16,7 +16,6 @@
 package com.example.marsphotos.ui.screens
 
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,8 +27,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -49,14 +46,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import coil3.compose.AsyncImagePainter
-import coil3.compose.rememberAsyncImagePainter
 import com.example.marsphotos.R
-import com.example.marsphotos.ui.screens.network.MarsApi
 import com.example.marsphotos.ui.screens.network.MarsPhoto
-import com.example.marsphotos.ui.theme.MarsPhotosTheme
-import com.example.marsphotos.ui.theme.Shapes
-import org.intellij.lang.annotations.JdkConstants
 
 @Composable
 fun HomeScreen(
@@ -88,7 +79,7 @@ fun HomeScreen(
 }
 
 /**
- * ResultScreen displaying number of photos retrieved.
+ * ResultScreen displaying photos retrieved.
  */
 @Composable
 fun ResultScreen(numPhotosText: String, marsPhotoList: List<MarsPhoto>, modifier: Modifier = Modifier) {

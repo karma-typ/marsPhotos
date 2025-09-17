@@ -1,17 +1,12 @@
 package com.example.marsphotos.ui.screens.network
 
 
-import com.example.marsphotos.MarsPhotoApplication
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.http.GET
-import java.io.IOException
 
 private const val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com"
 private val retrofit = Retrofit.Builder()
@@ -48,7 +43,7 @@ object MarsApi {
             MarsPhoto("424918", "https://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000ML0044631240305221E03_DXXX.jpg"),
             MarsPhoto("424919", "https://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631230503683E01_DXXX.jpg")
         )
-        //delay(100)
+        delay(100)
         return listResult
     }
 }
