@@ -1,10 +1,45 @@
-Mars Photos
-==================================
+# Mars Photos
 
-Mars Photos app is a demo app that shows actual images of Mars' surface. These images are
-real-life photos from Mars captured by NASA's Mars rovers. The data is stored on a Web server
-as a REST web service.
+**Mars Photos** — пет приложение для практики работы с REST API, кешированием и Dependency Injection.  
+Приложение получает реальные фотографии Марса с NASA API, кэширует их для оффлайн-доступа и отображает через Coil.
 
-This app demonstrated the use of [Retrofit](https://square.github.io/retrofit/) to make REST requests to the web service, [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) to
-handle the deserialization of the returned JSON to Kotlin data objects and [Coil](https://coil-kt.github.io/coil/) to load images by URL.
+---
+
+## Функционал
+- Получение списка фотографий с NASA API через Retrofit  
+- Сохранение ссылок в Room для оффлайн-доступа  
+- Отображение изображений через Coil  
+- Обработка ошибок сети и пустых ответов  
+
+---
+
+## Технологии и архитектура
+- Kotlin — основной язык разработки  
+- MVVM — архитектура приложения  
+- Retrofit — работа с REST API  
+- Room — локальное хранение данных  
+- Hilt — Dependency Injection для ViewModel и Repository  
+- Coroutines — асинхронная обработка данных  
+
+---
+
+## Мой вклад
+- Настроил Retrofit и Room  
+- Реализовал кеширование и обновление данных  
+- Подключил Hilt для ViewModel и Repository  
+- Добавил UI-обработку ошибок  
+
+---
+
+## Чему научился
+- Понимание работы REST API  
+- Использование Dependency Injection через Hilt  
+- Кеширование данных и работа с Room  
+
+---
+
+## Планы по улучшению
+- Пагинация фото  
+- Экран детализации фото  
+- Unit-тесты  
 
